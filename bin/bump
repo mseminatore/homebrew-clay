@@ -1,0 +1,20 @@
+#!/bin/sh
+# Point Formula/clay.rb at a release: bin/bump 0.3.14 path/to/SHA256SUMS
+# (SHA256SUMS is the file the clay release workflow attaches to each release.)
+set -eu
+v=${1:?usage: bin/bump VERSION SHA256SUMS}
+sums=${2:?usage: bin/bump VERSION SHA256SUMS}
+f="$(dirname "$0")/../Formula/clay.rb"
+tmp="$f.tmp"
+awk -v v="$v" -v sums="$sums" '
+  BEGIN { while ((getline line < sums) > 0) { split(line, a, /[ \t]+/); sha[a[2]] = a[1] } }
+  /^ *url "/ {
+    sub(/download\/v[^\/]+\/clay-[^-]+-/, "download/v" v "/clay-" v "-")
+    match($0, /clay-[^"]*\.tar\.gz/); file = substr($0, RSTART, RLENGTH)
+    if (!(file in sha)) { print "bin/bump: no checksum for " file > "/dev/stderr"; exit 1 }
+  }
+  /^ *sha256 "/ && file != "" { sub(/"[0-9a-f]+"/, "\"" sha[file] "\""); file = "" }
+  { print }
+' "$f" > "$tmp"
+mv "$tmp" "$f"
+grep -nE 'url|sha256' "$f"

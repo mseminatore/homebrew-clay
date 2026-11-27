@@ -4,9 +4,14 @@ Homebrew tap for [Clay](https://github.com/mseminatore/clay) (macOS and Linux,
 arm64 and x86_64).
 
 ```sh
-brew install mseminatore/clay/clay
-# or: brew tap mseminatore/clay && brew install clay
+brew install mseminatore/clay/clay-lang
 ```
+
+The formula is `clay-lang` (a plain `clay` is an old Homebrew cask name); the
+command it installs is `clay`. Installing by the full name also tells Homebrew
+to trust the formula, so afterwards the short name works:
+`brew upgrade clay-lang`, `brew info clay-lang`. (`brew tap mseminatore/clay`
+followed by `brew install clay-lang` needs `brew trust mseminatore/clay` first.)
 
 The formula installs the prebuilt release archives. `clay --compile` needs a C
 compiler (`cc`): the Xcode Command Line Tools on macOS, gcc or clang on Linux.
@@ -21,5 +26,5 @@ release is published. By hand:
 ```sh
 gh release download v0.3.14 -R mseminatore/clay -p SHA256SUMS
 bin/bump 0.3.14 SHA256SUMS && rm SHA256SUMS
-brew audit --strict --online mseminatore/clay/clay
+brew audit --strict --online mseminatore/clay/clay-lang
 ```

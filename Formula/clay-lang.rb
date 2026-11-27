@@ -1,6 +1,6 @@
 # Installs the prebuilt release archives from github.com/mseminatore/clay.
 # Updated by the clay release workflow (url/sha256/version); see README.md.
-class Clay < Formula
+class ClayLang < Formula
   desc "Prototype-based, pure object-oriented language compiling to C or bytecode"
   homepage "https://github.com/mseminatore/clay"
   license "MIT"

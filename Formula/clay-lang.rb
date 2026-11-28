@@ -7,23 +7,23 @@ class ClayLang < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/mseminatore/clay/releases/download/v0.3.13/clay-0.3.13-macos-arm64.tar.gz"
-      sha256 "b97f72202c86ca80c6167b3012136c01522a62462220716026017a656f33d630"
+      url "https://github.com/mseminatore/clay/releases/download/v0.3.14/clay-0.3.14-macos-arm64.tar.gz"
+      sha256 "d6ada75505e0245c576f66bb601286eb2556991cc61d6a728de12649f2f00671"
     end
     on_intel do
-      url "https://github.com/mseminatore/clay/releases/download/v0.3.13/clay-0.3.13-macos-x86_64.tar.gz"
-      sha256 "ec08f4382119777fb2a0a0c9d6b5719ea02f8bdffe75cf18cbb14de3ccd5d7be"
+      url "https://github.com/mseminatore/clay/releases/download/v0.3.14/clay-0.3.14-macos-x86_64.tar.gz"
+      sha256 "51da0693228e138bc46eb9643a082071acc4ac450f6d140e3638074a682bdd32"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/mseminatore/clay/releases/download/v0.3.13/clay-0.3.13-linux-arm64.tar.gz"
-      sha256 "2bdbd47208ac6ca35fdadd77c59139cca35ece3cd7240a0345c31d24dd56c7e4"
+      url "https://github.com/mseminatore/clay/releases/download/v0.3.14/clay-0.3.14-linux-arm64.tar.gz"
+      sha256 "53377dc8c10cf095a8cf8045101ac7aea76d56b90c34d2dfc54d8294c18fa758"
     end
     on_intel do
-      url "https://github.com/mseminatore/clay/releases/download/v0.3.13/clay-0.3.13-linux-x86_64.tar.gz"
-      sha256 "eaf16b20d18ddf8d081b24d6a0f72b339eb433bf0fd2914ef9a3c0cf592b34b6"
+      url "https://github.com/mseminatore/clay/releases/download/v0.3.14/clay-0.3.14-linux-x86_64.tar.gz"
+      sha256 "e272ed4a6cd0c9e6d7951080deae2dde2f6ef126f46c0f2a05bf11d01d0a6bd4"
     end
   end
 
